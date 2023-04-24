@@ -1,0 +1,13 @@
+name: gh-output-example
+# From the example at https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files
+on: [push, workflow_dispatch]
+jobs:
+  get-gh-output:
+    runs-on: windows-latest
+    steps:
+      - name: Set color
+        id: random-color-generator
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Get color
+
+        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
