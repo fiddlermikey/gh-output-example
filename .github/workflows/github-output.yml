@@ -3,11 +3,11 @@ name: gh-output-example
 on: [push, workflow_dispatch]
 jobs:
   get-gh-output:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Set color
         id: random-color-generator
-        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+        run: Write-Output "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
       - name: Get color
 
         run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
