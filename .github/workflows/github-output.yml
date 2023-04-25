@@ -7,7 +7,8 @@ jobs:
     steps:
       - name: Set color
         id: random-color-generator
-        run: Write-Output "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+        run: |  
+          "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
       - name: Get color
 
-        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+        run: Write-Output  "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
