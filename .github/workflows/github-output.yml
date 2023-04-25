@@ -3,7 +3,7 @@ name: gh-output-example
 on: [push, workflow_dispatch]
 jobs:
   get-gh-output:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Set color
         id: random-color-generator
